@@ -13,6 +13,7 @@
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "checkJs": true,
+    "exactOptionalPropertyTypes": true,
 
     /* Bundled projects */
     "lib": ["dom", "dom.iterable", "ES2022"],
@@ -26,17 +27,15 @@
     /* Path Aliases */
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
+      "~utils/*": [
+        "./src/utils/*"
+      ],
+      "~atoms/*": [
+        "./src/components/atoms/*"
+      ]
     }
   },
-  "include": [
-    ".eslintrc.cjs",
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.cjs",
-    "**/*.js",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": ["node_modules"]
+  "include": [".eslintrc.cjs", "next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.js", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"],
 }

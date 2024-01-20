@@ -1,32 +1,30 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/LEO8jsilAtr
- */
-import Link from "next/link"
-import { Button } from "~/components/ui/button"
-import {SVGProps} from "react";
+import Link from "next/link";
+import { Button } from "~/components/atoms/button";
+import type { SVGProps } from "react";
 
 export default function LandingPage() {
     return (
-
-            <div key="1" className={"flex flex-col min-h-screen"}>
-                <header
-                    className={"flex items-center justify-between px-6 py-4 bg-white dark:bg-gray-800 sm:flex-row md:justify-between"}>
-                    <Link href="#">
-                        <CircleDashedIcon className={"h-6 w-6"}/>
-                        <span className={"sr-only"}>Swing Dance Association</span>
-                    </Link>
-                    <nav className={"space-x-4 sm:flex sm:space-x-6"}>
-                        <Link className={"text-sm font-medium hover:underline sm:hidden md:hidden lg:block"} href="#">
+        <div key="1" className={"flex min-h-screen flex-col"}>
+            <header
+                className={
+                    "flex items-center justify-between bg-white px-6 py-4 dark:bg-gray-800 sm:flex-row md:justify-between"
+                }
+            >
+                <Link href="#">
+                    <CircleDashedIcon className={"h-6 w-6"} />
+                    <span className={"sr-only"}>Swing Dance Association</span>
+                </Link>
+                <nav className={"space-x-4 sm:flex sm:space-x-6"}>
+                    <Link className={"text-sm font-medium hover:underline sm:hidden md:hidden lg:block"} href="#">
                         About
                     </Link>
                     <Link className={"text-sm font-medium hover:underline sm:hidden md:hidden lg:block"} href="#">
-                    Events
-                </Link>
-                <Link className={"text-sm font-medium hover:underline sm:hidden md:hidden lg:block"} href="#">
-                Membership
-            </Link>
-            <Link className={"text-sm font-medium hover:underline sm:hidden md:hidden lg:block"} href="#">
+                        Events
+                    </Link>
+                    <Link className={"text-sm font-medium hover:underline sm:hidden md:hidden lg:block"} href="#">
+                        Membership
+                    </Link>
+                    <Link className={"text-sm font-medium hover:underline sm:hidden md:hidden lg:block"} href="#">
                         Contact
                     </Link>
                     <Button className={"lg:hidden"} variant="outline">
@@ -36,36 +34,38 @@ export default function LandingPage() {
                 </nav>
             </header>
             <main className={"flex-1"}>
-                <section className={"flex flex-col items-center justify-center py-24 bg-gray-100 dark:bg-gray-800"}>
-                    <h1 className={"text-4xl font-bold text-center"}>Join the Swing Dance Revolution!</h1>
+                <section className={"flex flex-col items-center justify-center bg-gray-100 py-24 dark:bg-gray-800"}>
+                    <h1 className={"text-center text-4xl font-bold"}>Join the Swing Dance Revolution!</h1>
                     <p className={"mt-4 text-center text-gray-500 dark:text-gray-400"}>
                         Experience the joy of swing dancing with our vibrant community.
                     </p>
                     <Link
-                        className="mt-8 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+                        className="mt-8 inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700"
                         href="#"
                     >
                         Join Now
                     </Link>
                 </section>
-                <section className={"py-24 bg-white dark:bg-gray-800"}>
-                    <div className={"container px-6 mx-auto"}>
-                        <h2 className={"text-3xl font-bold text-center"}>Why Join Us?</h2>
-                        <div className={"grid grid-cols-1 gap-6 mt-8 sm:grid-cols-2 lg:grid-cols-3"}>
+                <section className={"bg-white py-24 dark:bg-gray-800"}>
+                    <div className={"container mx-auto px-6"}>
+                        <h2 className={"text-center text-3xl font-bold"}>Why Join Us?</h2>
+                        <div className={"mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"}>
                             <div className={"flex flex-col items-center text-center"}>
-                                <WorkflowIcon className={"h-12 w-12 mb-4"} />
+                                <WorkflowIcon className={"mb-4 h-12 w-12"} />
                                 <h3 className={"text-xl font-bold"}>Access to Dance Workshops</h3>
-                                <p className={"mt-2 text-gray-500 dark:text-gray-400"}>Learn from the best in the industry.</p>
+                                <p className={"mt-2 text-gray-500 dark:text-gray-400"}>
+                                    Learn from the best in the industry.
+                                </p>
                             </div>
                             <div className={"flex flex-col items-center text-center"}>
-                                <PartyPopperIcon className={"h-12 w-12 mb-4"} />
+                                <PartyPopperIcon className={"mb-4 h-12 w-12"} />
                                 <h3 className={"text-xl font-bold"}>Social Events</h3>
                                 <p className={"mt-2 text-gray-500 dark:text-gray-400"}>
                                     Meet and dance with people who share your passion.
                                 </p>
                             </div>
                             <div className={"flex flex-col items-center text-center"}>
-                                <UserIcon className={"h-12 w-12 mb-4"} />
+                                <UserIcon className={"mb-4 h-12 w-12"} />
                                 <h3 className={"text-xl font-bold"}>Supportive Community</h3>
                                 <p className={"mt-2 text-gray-500 dark:text-gray-400"}>
                                     Join a community that supports and encourages each other.
@@ -74,11 +74,11 @@ export default function LandingPage() {
                         </div>
                     </div>
                 </section>
-                <section className={"py-24 bg-gray-100 dark:bg-gray-800"}>
-                    <div className={"container px-6 mx-auto"}>
-                        <h2 className={"text-3xl font-bold text-center"}>Upcoming Events</h2>
-                        <div className={"grid grid-cols-1 gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3"}>
-                            <div className={"flex flex-col items-start space-y-2 p-4 border rounded-lg"}>
+                <section className={"bg-gray-100 py-24 dark:bg-gray-800"}>
+                    <div className={"container mx-auto px-6"}>
+                        <h2 className={"text-center text-3xl font-bold"}>Upcoming Events</h2>
+                        <div className={"mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"}>
+                            <div className={"flex flex-col items-start space-y-2 rounded-lg border p-4"}>
                                 <h3 className={"text-lg font-bold"}>Swing Dance Workshop</h3>
                                 <p className={"text-gray-500 dark:text-gray-400"}>March 20, 2024</p>
                                 <p className={"text-sm text-gray-500 dark:text-gray-400"}>
@@ -88,7 +88,7 @@ export default function LandingPage() {
                                     Learn More
                                 </Link>
                             </div>
-                            <div className={"flex flex-col items-start space-y-2 p-4 border rounded-lg"}>
+                            <div className={"flex flex-col items-start space-y-2 rounded-lg border p-4"}>
                                 <h3 className={"text-lg font-bold"}>1920s Themed Dance Party</h3>
                                 <p className={"text-gray-500 dark:text-gray-400"}>April 5, 2024</p>
                                 <p className={"text-sm text-gray-500 dark:text-gray-400"}>
@@ -98,7 +98,7 @@ export default function LandingPage() {
                                     Learn More
                                 </Link>
                             </div>
-                            <div className={"flex flex-col items-start space-y-2 p-4 border rounded-lg"}>
+                            <div className={"flex flex-col items-start space-y-2 rounded-lg border p-4"}>
                                 <h3 className={"text-lg font-bold"}>Community Meetup</h3>
                                 <p className={"text-gray-500 dark:text-gray-400"}>April 20, 2024</p>
                                 <p className={"text-sm text-gray-500 dark:text-gray-400"}>
@@ -112,7 +112,7 @@ export default function LandingPage() {
                     </div>
                 </section>
             </main>
-            <footer className={"flex items-center justify-between px-6 py-4 bg-white dark:bg-gray-800"}>
+            <footer className={"flex items-center justify-between bg-white px-6 py-4 dark:bg-gray-800"}>
                 <div className={"flex space-x-4"}>
                     <Link className={"text-gray-400 hover:text-gray-500 dark:hover:text-gray-400"} href="#">
                         <FacebookIcon className={"h-6 w-6"} />
@@ -129,10 +129,10 @@ export default function LandingPage() {
                 </div>
             </footer>
         </div>
-    )
+    );
 }
 
-function CircleDashedIcon(props:  SVGProps<SVGSVGElement>) {
+function CircleDashedIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg
             {...props}
@@ -155,11 +155,10 @@ function CircleDashedIcon(props:  SVGProps<SVGSVGElement>) {
             <path d="M2.18 13.9a9.93 9.93 0 0 1 0-3.8" />
             <path d="M3.71 6.4a9.95 9.95 0 0 1 2.7-2.69" />
         </svg>
-    )
+    );
 }
 
-
-function FacebookIcon(props:  SVGProps<SVGSVGElement>) {
+function FacebookIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg
             {...props}
@@ -175,11 +174,10 @@ function FacebookIcon(props:  SVGProps<SVGSVGElement>) {
         >
             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
         </svg>
-    )
+    );
 }
 
-
-function InstagramIcon(props:  SVGProps<SVGSVGElement>) {
+function InstagramIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg
             {...props}
@@ -197,11 +195,10 @@ function InstagramIcon(props:  SVGProps<SVGSVGElement>) {
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
             <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
         </svg>
-    )
+    );
 }
 
-
-function MenuIcon(props:  SVGProps<SVGSVGElement>) {
+function MenuIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg
             {...props}
@@ -219,11 +216,10 @@ function MenuIcon(props:  SVGProps<SVGSVGElement>) {
             <line x1="4" x2="20" y1="6" y2="6" />
             <line x1="4" x2="20" y1="18" y2="18" />
         </svg>
-    )
+    );
 }
 
-
-function PartyPopperIcon(props:  SVGProps<SVGSVGElement>) {
+function PartyPopperIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg
             {...props}
@@ -247,11 +243,10 @@ function PartyPopperIcon(props:  SVGProps<SVGSVGElement>) {
             <path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98v0C9.52 4.9 9 5.52 9 6.23V7" />
             <path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z" />
         </svg>
-    )
+    );
 }
 
-
-function TwitterIcon(props:  SVGProps<SVGSVGElement>) {
+function TwitterIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg
             {...props}
@@ -267,11 +262,10 @@ function TwitterIcon(props:  SVGProps<SVGSVGElement>) {
         >
             <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
         </svg>
-    )
+    );
 }
 
-
-function UserIcon(props:  SVGProps<SVGSVGElement>) {
+function UserIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg
             {...props}
@@ -288,11 +282,10 @@ function UserIcon(props:  SVGProps<SVGSVGElement>) {
             <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
             <circle cx="12" cy="7" r="4" />
         </svg>
-    )
+    );
 }
 
-
-function WorkflowIcon(props:  SVGProps<SVGSVGElement>) {
+function WorkflowIcon(props: SVGProps<SVGSVGElement>) {
     return (
         <svg
             {...props}
@@ -310,5 +303,5 @@ function WorkflowIcon(props:  SVGProps<SVGSVGElement>) {
             <path d="M7 11v4a2 2 0 0 0 2 2h4" />
             <rect width="8" height="8" x="13" y="13" rx="2" />
         </svg>
-    )
+    );
 }
