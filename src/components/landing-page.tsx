@@ -1,6 +1,17 @@
 import Link from "next/link";
-import { Button } from "~/components/atoms/button";
-import type { SVGProps } from "react";
+import {Button} from "~/components/atoms/button";
+import React from "react";
+
+/**
+ * Clickable link in the navigation bar.
+ */
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+    return (
+        <Link className={"text-sm font-medium hover:underline sm:hidden md:hidden lg:block"} href={href}>
+            {children}
+        </Link>
+    );
+}
 
 export default function LandingPage() {
     return (
@@ -15,18 +26,11 @@ export default function LandingPage() {
                     <span className={"sr-only"}>Swing Dance Association</span>
                 </Link>
                 <nav className={"space-x-4 sm:flex sm:space-x-6"}>
-                    <Link className={"text-sm font-medium hover:underline sm:hidden md:hidden lg:block"} href="#">
-                        About
-                    </Link>
-                    <Link className={"text-sm font-medium hover:underline sm:hidden md:hidden lg:block"} href="#">
-                        Events
-                    </Link>
-                    <Link className={"text-sm font-medium hover:underline sm:hidden md:hidden lg:block"} href="#">
-                        Membership
-                    </Link>
-                    <Link className={"text-sm font-medium hover:underline sm:hidden md:hidden lg:block"} href="#">
-                        Contact
-                    </Link>
+                    <NavLink href="#">Home</NavLink>
+                    <NavLink href="#">Events</NavLink>
+                    <NavLink href="#">Lessons</NavLink>
+                    <NavLink href="#">Contact</NavLink>
+                    <NavLink href="#">Gallery</NavLink>
                     <Button className={"lg:hidden"} variant="outline">
                         <MenuIcon className={"h-6 w-6"} />
                         <span className={"sr-only"}>Menu</span>
@@ -114,15 +118,9 @@ export default function LandingPage() {
             </main>
             <footer className={"flex items-center justify-between bg-white px-6 py-4 dark:bg-gray-800"}>
                 <div className={"flex space-x-4"}>
-                    <Link className={"text-gray-400 hover:text-gray-500 dark:hover:text-gray-400"} href="#">
-                        <FacebookIcon className={"h-6 w-6"} />
-                    </Link>
-                    <Link className={"text-gray-400 hover:text-gray-500 dark:hover:text-gray-400"} href="#">
-                        <TwitterIcon className={"h-6 w-6"} />
-                    </Link>
-                    <Link className={"text-gray-400 hover:text-gray-500 dark:hover:text-gray-400"} href="#">
-                        <InstagramIcon className={"h-6 w-6"} />
-                    </Link>
+                    <IconLink href={"#"} icon={FacebookIcon} />
+                    <IconLink href={"#"} icon={TwitterIcon} />
+                    <IconLink href={"#"} icon={InstagramIcon} />
                 </div>
                 <div className={"text-sm text-gray-500 dark:text-gray-400"}>
                     © 2024 Swing Dance Association. All rights reserved.
@@ -132,94 +130,96 @@ export default function LandingPage() {
     );
 }
 
-function CircleDashedIcon(props: SVGProps<SVGSVGElement>) {
+type Icon = (props: { className: string }) => React.ReactNode;
+
+function IconLink({ href, icon }: { href: string; icon: Icon }) {
     return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <path d="M10.1 2.18a9.93 9.93 0 0 1 3.8 0" />
-            <path d="M17.6 3.71a9.95 9.95 0 0 1 2.69 2.7" />
-            <path d="M21.82 10.1a9.93 9.93 0 0 1 0 3.8" />
-            <path d="M20.29 17.6a9.95 9.95 0 0 1-2.7 2.69" />
-            <path d="M13.9 21.82a9.94 9.94 0 0 1-3.8 0" />
-            <path d="M6.4 20.29a9.95 9.95 0 0 1-2.69-2.7" />
-            <path d="M2.18 13.9a9.93 9.93 0 0 1 0-3.8" />
-            <path d="M3.71 6.4a9.95 9.95 0 0 1 2.7-2.69" />
-        </svg>
+        <Link className={"text-gray-400 hover:text-gray-500 dark:hover:text-gray-400"} href={href}>
+            {icon({ className: "h-6 w-6" })}
+        </Link>
     );
 }
 
-function FacebookIcon(props: SVGProps<SVGSVGElement>) {
-    return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-        </svg>
-    );
-}
+const CircleDashedIcon: Icon = (props) => (
+    <svg
+        {...props}
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
+        <path d="M10.1 2.18a9.93 9.93 0 0 1 3.8 0" />
+        <path d="M17.6 3.71a9.95 9.95 0 0 1 2.69 2.7" />
+        <path d="M21.82 10.1a9.93 9.93 0 0 1 0 3.8" />
+        <path d="M20.29 17.6a9.95 9.95 0 0 1-2.7 2.69" />
+        <path d="M13.9 21.82a9.94 9.94 0 0 1-3.8 0" />
+        <path d="M6.4 20.29a9.95 9.95 0 0 1-2.69-2.7" />
+        <path d="M2.18 13.9a9.93 9.93 0 0 1 0-3.8" />
+        <path d="M3.71 6.4a9.95 9.95 0 0 1 2.7-2.69" />
+    </svg>
+);
 
-function InstagramIcon(props: SVGProps<SVGSVGElement>) {
-    return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-        </svg>
-    );
-}
+const FacebookIcon: Icon = (props) => (
+    <svg
+        {...props}
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+);
 
-function MenuIcon(props: SVGProps<SVGSVGElement>) {
-    return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <line x1="4" x2="20" y1="12" y2="12" />
-            <line x1="4" x2="20" y1="6" y2="6" />
-            <line x1="4" x2="20" y1="18" y2="18" />
-        </svg>
-    );
-}
+const InstagramIcon: Icon = (props) => (
+    <svg
+        {...props}
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
+        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+);
 
-function PartyPopperIcon(props: SVGProps<SVGSVGElement>) {
+const MenuIcon: Icon = (props) => (
+    <svg
+        {...props}
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
+        <line x1="4" x2="20" y1="12" y2="12" />
+        <line x1="4" x2="20" y1="6" y2="6" />
+        <line x1="4" x2="20" y1="18" y2="18" />
+    </svg>
+);
+
+const PartyPopperIcon: Icon = (props) => {
     return (
         <svg
             {...props}
@@ -244,9 +244,9 @@ function PartyPopperIcon(props: SVGProps<SVGSVGElement>) {
             <path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z" />
         </svg>
     );
-}
+};
 
-function TwitterIcon(props: SVGProps<SVGSVGElement>) {
+const TwitterIcon: Icon = (props) => {
     return (
         <svg
             {...props}
@@ -263,9 +263,9 @@ function TwitterIcon(props: SVGProps<SVGSVGElement>) {
             <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
         </svg>
     );
-}
+};
 
-function UserIcon(props: SVGProps<SVGSVGElement>) {
+const UserIcon: Icon = (props) => {
     return (
         <svg
             {...props}
@@ -283,9 +283,9 @@ function UserIcon(props: SVGProps<SVGSVGElement>) {
             <circle cx="12" cy="7" r="4" />
         </svg>
     );
-}
+};
 
-function WorkflowIcon(props: SVGProps<SVGSVGElement>) {
+const WorkflowIcon: Icon = (props) => {
     return (
         <svg
             {...props}
@@ -304,4 +304,4 @@ function WorkflowIcon(props: SVGProps<SVGSVGElement>) {
             <rect width="8" height="8" x="13" y="13" rx="2" />
         </svg>
     );
-}
+};
