@@ -8,9 +8,11 @@ export default function NotFound() {
             <div className={"grid h-full place-items-center"}>
                 <div>
                     <h2 className={"mb-3 text-4xl"}>Page inconnue</h2>
-                    <Button variant={"link"} size={"icon"} className={"justify-normal"}>
-                        <Link href="/">Retour à l&apos;acceuil</Link>
-                    </Button>
+                    <Link href="/">
+                        <Button variant={"link"} size={"icon"} className={"justify-normal"}>
+                            Retour à l&apos;acceuil
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </RootLayout>
