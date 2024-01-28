@@ -6,7 +6,7 @@ import React from "react";
  */
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
     return (
-        <Link className={"text-sm font-medium hover:underline sm:hidden md:hidden lg:block"} href={href}>
+        <Link className={"text-sm py-3 lg:py-0 text-accent font-medium hover:underline lg:block"} href={href}>
             {children}
         </Link>
     );
