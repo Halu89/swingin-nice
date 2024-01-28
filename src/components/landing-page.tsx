@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React from "react";
+import { VariantProps, cva } from "class-variance-authority";
+import { cn } from "~utils/utils.ts";
 
 const MainContent = () => {
     return (
@@ -19,21 +21,27 @@ const Hero = () => {
             <h1 className={"text-4xl font-bold"}>Bienvenue chez Swingin Nice</h1>
             <p className={"mt-4 max-w-prose text-gray-500 dark:text-gray-400"}>
                 Cette page est destinée à promouvoir les danses Swing sur Nice et échanger les informations concernant
-                les écoles, les soirées et tout autres événements susceptibles d&apos;intéresser les danseurs de swing: Lindy
-                Hop, Charleston, Jazz Roots.
+                les écoles, les soirées et tout autres événements susceptibles d&apos;intéresser les danseurs de swing:
+                Lindy Hop, Charleston, Jazz Roots.
             </p>
         </div>
     );
 };
 
-const Section = ({ isEven = true, children }: { isEven: boolean; children: React.ReactNode }) => {
-    let baseClass = "py-36 dark:bg-gray-800";
-    if (isEven) {
-        baseClass += " bg-orange-100";
-    } else {
-        baseClass += " bg-orange-50";
-    }
-    return <section className={baseClass}>{children}</section>;
+const sectionVariants = cva("py-32 dark:bg-gray-800", {
+    variants: {
+        isEven: {
+            true: "bg-orange-100",
+            false: "bg-orange-50",
+        },
+    },
+    defaultVariants: {
+        isEven: true,
+    },
+});
+
+const Section = ({ isEven, children }: { children: React.ReactNode } & VariantProps<typeof sectionVariants>) => {
+    return <section className={cn(sectionVariants({ isEven }))}>{children}</section>;
 };
 
 const Events = () => {
