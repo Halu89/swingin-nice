@@ -1,17 +1,14 @@
-import {FacebookIcon, IconLink, InstagramIcon, TwitterIcon} from "~atoms/icons";
+import { FacebookIcon, IconLink, InstagramIcon } from "~atoms/icons";
 import React from "react";
 
 const Footer = () => {
     return (
-        <footer className={"flex items-center justify-between bg-primary text-accent px-6 py-4 dark:bg-gray-800"}>
+        <footer className={"flex items-center justify-between bg-primary px-6 py-4 text-accent dark:bg-gray-800"}>
             <div className={"flex space-x-4"}>
-                <IconLink href={"#"} icon={FacebookIcon} />
-                <IconLink href={"#"} icon={TwitterIcon} />
-                <IconLink href={"#"} icon={InstagramIcon} />
+                <IconLink href={"https://www.facebook.com/SwinginNice"} icon={FacebookIcon} />
+                <IconLink href={"https://www.instagram.com/swingin_nice/"} icon={InstagramIcon} />
             </div>
-            <div className={"text-sm text-muted-foreground"}>
-                © 2024 Swing Dance Association. All rights reserved.
-            </div>
+            <div className={"text-sm text-muted-foreground"}>© 2024 Swingin&apos; Nice.</div>
         </footer>
     );
 };

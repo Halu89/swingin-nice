@@ -16,10 +16,10 @@ const Navbar = () => {
                 <span className={"sr-only"}>Swing Dance Association</span>
             </Link>
             <nav className={"space-x-4 sm:flex sm:space-x-6"}>
-                <NavLink href="/">Home</NavLink>
-                <NavLink href="/events">Events</NavLink>
-                <NavLink href="/schools">Lessons</NavLink>
-                <NavLink href="/contact">Contact</NavLink>
+                <NavLink href="/">Accueil</NavLink>
+                <NavLink href="/events">Évenements</NavLink>
+                <NavLink href="/schools">Leçons</NavLink>
+                {/*<NavLink href="/contact">Contact</NavLink>*/}
                 {/*<NavLink href="#">Gallery</NavLink>*/}
                 <Button className={"lg:hidden"} variant="outline">
                     <MenuIcon className={"h-6 w-6"} />
