@@ -1,4 +1,4 @@
-import LandingPage from "~/components/landing-page";
+import LandingPage from "~/components/landing-page.tsx";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
