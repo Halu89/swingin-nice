@@ -8,11 +8,11 @@ const Navbar = () => {
     return (
         <header
             className={
-                "flex items-center justify-between bg-white px-6 py-4 dark:bg-gray-800 sm:flex-row md:justify-between"
+                "flex items-center justify-between bg-primary text-accent px-6 py-4 dark:bg-gray-800 sm:flex-row md:justify-between"
             }
         >
             <Link href="/">
-                <CircleDashedIcon className={"h-6 w-6"} />
+                <CircleDashedIcon className={"h-6 w-6 text-accent"} />
                 <span className={"sr-only"}>Swing Dance Association</span>
             </Link>
             <nav className={"space-x-4 sm:flex sm:space-x-6"}>

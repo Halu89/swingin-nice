@@ -1,23 +1,21 @@
 import Link from "next/link";
 import React from "react";
 import { PartyPopperIcon, UserIcon, WorkflowIcon } from "~atoms/icons";
+import {Button} from "~atoms/button.tsx";
 
 const MainContent = () => {
     return (
         <main className={"flex-1"}>
-            <section className={"flex flex-col items-center justify-center bg-gray-100 py-24 dark:bg-gray-800"}>
+            <section className={"flex flex-col items-center justify-center bg-background py-24 dark:bg-gray-800"}>
                 <h1 className={"text-center text-4xl font-bold"}>Join the Swing Dance Revolution!</h1>
                 <p className={"mt-4 text-center text-gray-500 dark:text-gray-400"}>
                     Experience the joy of swing dancing with our vibrant community.
                 </p>
-                <Link
-                    className="mt-8 inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700"
-                    href="#"
-                >
+                <Button variant={"default"} size={"lg"}>
                     Join Now
-                </Link>
+                </Button>
             </section>
-            <section className={"bg-white py-24 dark:bg-gray-800"}>
+            <section className={"bg-secondary stroke-gray-500 py-24 dark:bg-gray-800"}>
                 <div className={"container mx-auto px-6"}>
                     <h2 className={"text-center text-3xl font-bold"}>Why Join Us?</h2>
                     <div className={"mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"}>

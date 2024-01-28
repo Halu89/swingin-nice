@@ -5,7 +5,7 @@ export type Icon = (props: { className: string }) => React.ReactNode;
 
 export function IconLink({ href, icon }: { href: string; icon: Icon }) {
     return (
-        <Link className={"text-gray-400 hover:text-gray-500 dark:hover:text-gray-400"} href={href}>
+        <Link className={"text-accent hover:text-green-900 dark:hover:text-gray-400"} href={href}>
             {icon({ className: "h-6 w-6" })}
         </Link>
     );
