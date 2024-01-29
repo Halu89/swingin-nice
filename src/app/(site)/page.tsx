@@ -2,6 +2,8 @@ import { cva, type VariantProps } from "class-variance-authority";
 import React from "react";
 import { cn } from "~utils/utils.ts";
 import Link from "next/link";
+import Image from "next/image";
+import BackgroundImage from "~root/public/dancers.jpg";
 
 const LandingPage = () => {
     return (
@@ -17,22 +19,31 @@ const LandingPage = () => {
 
 const Hero = () => {
     return (
-        <div className={"mx-3 flex flex-col items-center justify-center text-center"}>
-            <h1 className={"text-4xl font-bold"}>Bienvenue chez Swingin&apos; Nice</h1>
-            <p className={"mt-4 max-w-prose text-gray-500 dark:text-gray-400"}>
-                Cette page est destinée à promouvoir les danses Swing sur Nice et échanger les informations concernant
-                les écoles, les soirées et tout autres événements susceptibles d&apos;intéresser les danseurs de swing:
-                Lindy Hop, Charleston, Jazz Roots.
-            </p>
+        <div className={"flex flex-col items-center justify-center text-center"}>
+            <div className="flex h-full items-center flex-col lg:flex-row">
+                <div className="lg:w-1/2 ">
+                    <Image src={BackgroundImage} alt={""} quality={100} className={"lg:rounded-r-xl"} />
+                </div>
+                <div className={"grid lg:w-1/2 items-center py-4 lg:py-0"}>
+                    <div>
+                        <h1 className={"text-4xl font-bold"}>Bienvenue chez Swingin&apos; Nice</h1>
+                        <p className={"mt-4 max-w-prose text-gray-400 dark:text-gray-400"}>
+                            Cette page est destinée à promouvoir les danses Swing sur Nice et échanger les informations
+                            concernant les écoles, les soirées et tout autres événements susceptibles d&apos;intéresser
+                            les danseurs de swing: Lindy Hop, Charleston, Jazz Roots.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
 
-const sectionVariants = cva("py-28 dark:bg-gray-800", {
+const sectionVariants = cva("py-2 lg:py-8 dark:bg-gray-800", {
     variants: {
         isEven: {
             true: "bg-orange-100",
-            false: "bg-orange-50",
+            false: "lg:py-12 bg-orange-50",
         },
     },
     defaultVariants: {
