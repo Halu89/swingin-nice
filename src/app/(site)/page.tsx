@@ -27,8 +27,8 @@ const Hero = () => {
                 </div>
                 <div className={"grid items-center py-4 lg:w-1/2 lg:py-0"}>
                     <div>
-                        <h1 className={"text-4xl font-bold dark:text-gray-100"}>Bienvenue chez Swingin&apos; Nice</h1>
-                        <p className={"mt-4 max-w-prose text-gray-400 dark:text-gray-400"}>
+                        <h1 className={"text-4xl font-bold"}>Bienvenue chez Swingin&apos; Nice</h1>
+                        <p className={"mt-4 max-w-prose text-gray-600"}>
                             Cette page est destinée à promouvoir les danses Swing sur Nice et échanger les informations
                             concernant les écoles, les soirées et tout autres événements susceptibles d&apos;intéresser
                             les danseurs de swing: Lindy Hop, Charleston, Jazz Roots.
@@ -43,8 +43,8 @@ const Hero = () => {
 const sectionVariants = cva("py-2 lg:py-8", {
     variants: {
         isEven: {
-            true: "bg-light",
-            false: "lg:py-12 bg-light2",
+            true: "bg-light2",
+            false: "lg:py-12 bg-light",
         },
     },
     defaultVariants: {
