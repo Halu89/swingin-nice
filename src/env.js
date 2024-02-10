@@ -18,7 +18,7 @@ export const env = createEnv({
     client: {
         // NEXT_PUBLIC_CLIENTVAR: z.string(),
         NEXT_PUBLIC_SANITY_PROJECT_ID: z.string(),
-        NEXT_PUBLIC_SANITY_DATASET: z.enum(["development", "production"]).default("production"),
+        NEXT_PUBLIC_SANITY_DATASET: z.enum(["test", "production"]).default("test"),
     },
 
     /**

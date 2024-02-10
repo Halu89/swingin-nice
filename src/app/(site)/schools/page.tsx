@@ -23,7 +23,7 @@ const Schools = async () => {
     const schools = await getSchools();
 
     return (
-        <main className={"flex-1 p-6"}>
+        <main className={"p-6"}>
             <h1 className={"text-3xl text-accent"}>Écoles de danse</h1>
             <div className={"mt-8 grid grid-cols-1 gap-3 lg:grid-cols-2"}>
                 {schools?.map((school) => {
@@ -33,15 +33,5 @@ const Schools = async () => {
         </main>
     );
 };
-
-// function Layout({ children }: { children: React.ReactNode }) {
-//     return (
-//         <div key="1" className={"flex min-h-screen flex-col"}>
-//             <Navbar />
-//             {children}
-//             <Footer />
-//         </div>
-//     );
-// }
 
 export default Schools;

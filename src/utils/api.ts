@@ -1,5 +1,5 @@
 import { createClient, groq } from "next-sanity";
-import { type School } from "~root/sanity/schema";
+import { type School, type EventType } from "~root/sanity/schema";
 import { apiVersion, dataset, projectId, useCdn } from "~root/sanity/env.ts";
 
 const clientConfig = {
@@ -21,17 +21,15 @@ export async function getSchools(): Promise<School[]> {
     );
 }
 
-// export async function getProject(slug: string): Promise<Project> {
-//     return createClient(clientConfig).fetch(
-//         groq`*[_type == "project" && slug.current == $slug][0]{
-//       _id,
-//       _createdAt,
-//       name,
-//       "slug": slug.current,
-//       "image": image.asset->url,
-//       url,
-//       content
-//     }`,
-//         { slug },
-//     );
-// }
+export async function getEvents(): Promise<EventType[]> {
+     return createClient(clientConfig).fetch(
+         groq`*[_type == "event"] { 
+       _id,
+       _createdAt,
+       name,
+       "image": image.asset->url,
+       url,
+       description
+     }`,
+     );
+}
