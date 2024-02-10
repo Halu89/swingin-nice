@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="en" className={"h-screen"}>
+        // suppressHydrationWarning is necessary with the dark mode switcher
+        <html lang="en" className={"h-screen"} suppressHydrationWarning>
             <body className={"h-screen"}>{children}</body>
         </html>
     );

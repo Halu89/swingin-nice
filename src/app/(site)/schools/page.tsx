@@ -6,7 +6,7 @@ import { Button } from "~/components/atoms/button";
 import Link from "next/link";
 
 const School = ({ school }: { school: School }) => (
-    <div className={"border-2 border-accent p-8"}>
+    <div className={"rounded border border-accent p-8"}>
         <h2 className={"mb-4 text-xl font-bold text-accent"}>{school.name}</h2>
         <div className={"portable-text"}>
             <PortableText value={school.description} />
@@ -23,7 +23,7 @@ const Schools = async () => {
     const schools = await getSchools();
 
     return (
-        <main className={"p-6"}>
+        <main className={"bg-light2 p-6"}>
             <h1 className={"text-3xl text-accent"}>Écoles de danse</h1>
             <div className={"mt-8 grid grid-cols-1 gap-3 lg:grid-cols-2"}>
                 {schools?.map((school) => {

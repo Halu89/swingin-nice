@@ -6,6 +6,7 @@ import NavLink from "~atoms/Navlink.tsx";
 import Link from "next/link";
 import Image from "next/image";
 import icon from "~root/public/logo.svg";
+import ThemeToggle from "~atoms/ThemeToggle.tsx";
 
 const TAILWIND_LG_BREADKPOINT = 1024 as const;
 
@@ -26,12 +27,13 @@ export function NavbarDefault() {
 
 
     return (
-        <Navbar placeholder={undefined} fullWidth className=" bg-primary px-4 py-2 border-0">
+        <Navbar placeholder={undefined} fullWidth className="border-0 bg-primary px-4 py-2">
             <div className="container mx-auto flex items-center justify-between text-accent">
                 <Link href="/">
                     <Image src={icon as string} alt={"Logo"} className={"h-8 w-8"} />
                     <span className={"sr-only"}>Swingin&apos; Nice</span>
                 </Link>
+                <ThemeToggle />
                 <div className="hidden lg:block">
                     <NavList />
                 </div>

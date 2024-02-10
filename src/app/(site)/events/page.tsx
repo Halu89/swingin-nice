@@ -7,7 +7,7 @@ import TableOfContents from "~/components/molecules/ContentTable";
 import { uuidToDomId } from "~utils/utils.ts";
 
 const Event = ({ event }: { event: FullEvent }) => (
-    <div className={"event prose rounded border-2 border-accent p-4 lg:p-8"} id={uuidToDomId(event._id)}>
+    <div className={"event prose rounded border border-accent p-4 lg:p-8"} id={uuidToDomId(event._id)}>
         <h2 className={"mb-4 text-xl font-bold text-accent"}>{event.name}</h2>
         {event.image ? <Image width={750} height={450} src={event.image} alt={""} /> : null}
         <div className={"portable-text"}>{event.description && <PortableText value={event?.description} />}</div>
@@ -18,7 +18,7 @@ const Events = async () => {
     const events = await getEvents();
 
     return (
-        <main className={"flex gap-8 bg-orange-50 p-3 lg:p-6"}>
+        <main className={"flex gap-8 bg-light2 p-3 lg:p-6"}>
             <div>
                 <TableOfContents events={events} />
             </div>

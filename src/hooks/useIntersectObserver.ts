@@ -13,7 +13,6 @@ const useIntersectObserver = (selector: string) => {
         const handleObserver = (entries: IntersectionObserverEntry[]) => {
             entries.forEach((entry) => {
                 if (entry?.isIntersecting) {
-                    console.debug("Set active id: ", entry.target.id);
                     setActiveId(entry.target.id);
                 }
             });
@@ -24,7 +23,6 @@ const useIntersectObserver = (selector: string) => {
         });
 
         const elements = document.querySelectorAll(selector);
-        console.debug("elements :>> ", elements)
         elements.forEach((elem) => observer.current?.observe(elem));
         return () => observer.current?.disconnect();
     }, [selector]);
