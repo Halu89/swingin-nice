@@ -32,6 +32,10 @@
         --input: 214.3 31.8% 91.4%;
         --ring: 222.2 84% 4.9%;
 
+        --light: 202 87% 4%;
+        --light2: 222.2 92% 6%;
+        --text: 222.2 84% 4.9%;
+
         --green: 192.63, 44.19%, 33.73%;
         --orange: 31.74, 83.5%, 40.39%;
         --yellow: 45.67, 88.55%, 55.49%;
@@ -40,6 +44,10 @@
     }
 
     .dark {
+        --light: 222.2 84% 4.9%;
+        --light2: 234 36% 3%;
+        --text: 0 0% 100% /90%;
+
         --background: 222.2 84% 4.9%;
         --foreground: 210 40% 98%;
 
@@ -49,7 +57,7 @@
         --popover: 222.2 84% 4.9%;
         --popover-foreground: 210 40% 98%;
 
-        --primary: 216 43 13 100%;
+        --primary: 216 43% 13%;
         --primary-foreground: 222.2 47.4% 11.2%;
 
         --secondary: 217.2 32.6% 17.5%;
@@ -80,8 +88,10 @@
 }
 
 .portable-text {
+    /*@apply text-text;*/
+
     h1 {
-        @apply text-3xl font-bold;
+        @apply text-text text-3xl font-bold;
     }
     h2 {
         @apply text-2xl font-bold;
@@ -95,4 +105,8 @@
     a {
         @apply text-accent underline;
     }
+}
+
+.dark .portable-text {
+    @apply prose-invert;
 }

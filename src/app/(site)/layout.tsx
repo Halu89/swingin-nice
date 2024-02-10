@@ -7,7 +7,7 @@ import Providers from "~/components/molecules/providers.tsx";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <Providers>
-            <div key="1" className={"grid min-h-full grid-rows-[auto_1fr_auto]"}>
+            <div key="1" className={"grid min-h-full grid-rows-[auto_1fr_auto] dark:prose-invert"}>
                 <Navbar />
                 {children}
                 <Footer />

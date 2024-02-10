@@ -17,6 +17,9 @@ const config = {
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
                 ring: "hsl(var(--ring))",
+                light: "hsl(var(--light))",
+                light2: "hsl(var(--light2))",
+                text: "hsl(var(--text))",
                 background: "hsl(var(--background))",
                 foreground: "hsl(var(--foreground))",
                 primary: {
@@ -69,10 +72,7 @@ const config = {
             },
         },
     },
-    plugins: [
-        require("tailwindcss-animate"),
-        require("@tailwindcss/typography")
-    ],
+    plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
 
 export default config;

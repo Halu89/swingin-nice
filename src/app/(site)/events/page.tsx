@@ -18,7 +18,7 @@ const Events = async () => {
     const events = await getEvents();
 
     return (
-        <main className={"flex gap-8 bg-orange-50 p-3 lg:p-6"}>
+        <main className={"flex gap-8 bg-light2 p-3 lg:p-6"}>
             <div>
                 <TableOfContents events={events} />
             </div>

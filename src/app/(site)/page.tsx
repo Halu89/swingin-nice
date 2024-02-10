@@ -8,7 +8,7 @@ import EventSummary from "~/components/molecules/EventSummary.tsx";
 
 const LandingPage = () => {
     return (
-        <main className={"flex-1 bg-orange-100"}>
+        <main className={"bg-light flex-1"}>
             {[Hero, Events].map((Component, index) => (
                 <Section isEven={index % 2 === 0} key={index}>
                     <Component />
@@ -40,11 +40,11 @@ const Hero = () => {
     );
 };
 
-const sectionVariants = cva("py-2 lg:py-8 dark:bg-gray-900", {
+const sectionVariants = cva("py-2 lg:py-8", {
     variants: {
         isEven: {
-            true: "bg-orange-100",
-            false: "lg:py-12 bg-orange-50",
+            true: "bg-light",
+            false: "lg:py-12 bg-light2",
         },
     },
     defaultVariants: {
