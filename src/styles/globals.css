@@ -80,9 +80,6 @@
 }
 
 .portable-text {
-    p, br {
-        margin-bottom: .5rem;
-    }
     h1 {
         @apply text-3xl font-bold;
     }
@@ -95,5 +92,7 @@
     h4 {
         @apply text-lg font-semibold;
     }
-
+    a {
+        @apply text-accent underline;
+    }
 }

@@ -44,9 +44,20 @@ export const event = {
             type: "string",
         },
         {
-            name: "url",
-            title: "URL",
-            type: "url",
+            name: "featured",
+            title: "Featured",
+            type: "boolean",
+            description: "Show this event on the homepage",
+        },
+        {
+            name: "date",
+            title: "Date",
+            type: "datetime",
+        },
+        {
+            name: "summary",
+            title: "Summary",
+            type: "string",
         },
         {
             name: "image",
@@ -70,14 +81,16 @@ export const event = {
     ],
 } satisfies SchemaTypeDefinition;
 
-export type EventType = {
+export type EventSummary = Partial<{
     _id: string;
     createdAt: Date;
     name: string;
-    url: string;
+    date: string;
+    summary: string;
     image: string;
-    description: PortableTextBlock[];
-};
+}>;
+
+export type FullEvent = EventSummary & { description?: PortableTextBlock[] };
 
 const schemaTypes = [school, event];
 export const schema: { types: SchemaTypeDefinition[] } = {
