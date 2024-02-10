@@ -92,7 +92,7 @@ export type EventSummary = Partial<{
 
 export type FullEvent = EventSummary & { description?: PortableTextBlock[] };
 
-const schemaTypes = [school, event] as const;
-export const schema: { types: readonly SchemaTypeDefinition[] } = {
+const schemaTypes = [school, event];
+export const schema: { types: SchemaTypeDefinition[] } = {
     types: schemaTypes,
 };
