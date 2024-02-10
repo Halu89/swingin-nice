@@ -26,7 +26,7 @@ export function NavbarDefault() {
 
 
     return (
-        <Navbar placeholder={undefined} fullWidth className=" bg-primary px-4 py-2 border-0">
+        <Navbar placeholder={undefined} fullWidth className="bg-primary px-4 py-2 border-0">
             <div className="container mx-auto flex items-center justify-between text-accent">
                 <Link href="/">
                     <Image src={icon as string} alt={"Logo"} className={"h-8 w-8"} />

@@ -21,13 +21,13 @@ const LandingPage = () => {
 const Hero = () => {
     return (
         <div className={"flex flex-col items-center justify-center text-center"}>
-            <div className="flex h-full items-center flex-col lg:flex-row">
+            <div className="flex h-full flex-col items-center lg:flex-row">
                 <div className="lg:w-1/2 ">
                     <Image src={BackgroundImage} alt={""} quality={100} className={"lg:rounded-r-xl"} />
                 </div>
-                <div className={"grid lg:w-1/2 items-center py-4 lg:py-0"}>
+                <div className={"grid items-center py-4 lg:w-1/2 lg:py-0"}>
                     <div>
-                        <h1 className={"text-4xl font-bold"}>Bienvenue chez Swingin&apos; Nice</h1>
+                        <h1 className={"text-4xl font-bold dark:text-gray-100"}>Bienvenue chez Swingin&apos; Nice</h1>
                         <p className={"mt-4 max-w-prose text-gray-400 dark:text-gray-400"}>
                             Cette page est destinée à promouvoir les danses Swing sur Nice et échanger les informations
                             concernant les écoles, les soirées et tout autres événements susceptibles d&apos;intéresser
@@ -40,7 +40,7 @@ const Hero = () => {
     );
 };
 
-const sectionVariants = cva("py-2 lg:py-8 dark:bg-gray-800", {
+const sectionVariants = cva("py-2 lg:py-8 dark:bg-gray-900", {
     variants: {
         isEven: {
             true: "bg-orange-100",
