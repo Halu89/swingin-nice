@@ -1,9 +1,10 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import React from "react";
 import { cn } from "~utils/utils.ts";
-import Link from "next/link";
 import Image from "next/image";
 import BackgroundImage from "~root/public/dancers.jpg";
+import { getEventsSummary } from "~utils/api.ts";
+import EventSummary from "~/components/molecules/EventSummary.tsx";
 
 const LandingPage = () => {
     return (
@@ -55,46 +56,23 @@ const Section = ({ isEven, children }: { children: React.ReactNode } & VariantPr
     return <section className={cn(sectionVariants({ isEven }))}>{children}</section>;
 };
 
-const Events = () => {
+const Events = async () => {
+    const events = await getEventsSummary();
+    if (!events) return null;
+
     return (
         <div className={"container mx-auto px-6"}>
-            <h2 className={"text-center text-3xl font-bold"}>Evenements à venir</h2>
+            <h2 className={"text-center text-3xl font-bold"}>Évènements à venir</h2>
             <div className={"mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"}>
-                <Event
-                    title={"Swing Dance Workshop"}
-                    date={"March 20, 2024"}
-                    description={"Join us for a fun and interactive swing dance workshop."}
-                />
-                <Event
-                    title={"1920s Themed Dance Party"}
-                    date={"April 5, 2024"}
-                    description={"Step back in time and enjoy a night of swing dancing."}
-                />
-                <Event
-                    title={"Community Meetup"}
-                    date={"April 20, 2024"}
-                    description={"Meet other members of the swing dance community."}
-                />
+                {events.map((event) => (
+                    <EventSummary
+                        key={event._id}
+                        title={event.name}
+                        date={event.date}
+                        summary={event.summary}
+                    />
+                ))}
             </div>
-        </div>
-    );
-};
-
-type EventProps = {
-    title: string;
-    date: string;
-    description: string;
-    url?: string;
-};
-const Event = ({ title, date, description, url = "#" }: EventProps) => {
-    return (
-        <div className={"flex flex-col items-start space-y-2 rounded-lg border p-4"}>
-            <h3 className={"text-lg font-bold"}>{title}</h3>
-            <p className={"text-gray-500 dark:text-gray-400"}>{date}</p>
-            <p className={"text-sm text-gray-500 dark:text-gray-400"}>{description}</p>
-            <Link className={"mt-auto text-indigo-600 hover:underline"} href={url}>
-                Plus d&apos;infos
-            </Link>
         </div>
     );
 };
