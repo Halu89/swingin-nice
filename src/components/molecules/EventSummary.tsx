@@ -23,6 +23,7 @@ const Event = ({ title, date, summary }: EventProps) => {
     );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- Might move to use a slug instead to display details.
 const MoreInfoLink = ({ url }: { url?: string }) => {
     if (!url) return null;
     return (
