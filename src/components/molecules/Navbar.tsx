@@ -25,7 +25,6 @@ export function NavbarDefault() {
         window.addEventListener("resize", () => window.innerWidth >= TAILWIND_LG_BREADKPOINT && setOpenNav(false));
     }, []);
 
-
     return (
         <Navbar placeholder={undefined} fullWidth className="border-0 bg-primary px-4 py-2">
             <div className="container mx-auto flex items-center justify-between text-accent">

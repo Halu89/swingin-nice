@@ -8,7 +8,7 @@ const Footer = () => {
                 <IconLink href={"https://www.facebook.com/SwinginNice"} icon={FacebookIcon} />
                 <IconLink href={"https://www.instagram.com/swingin_nice/"} icon={InstagramIcon} />
             </div>
-            <div className={"text-sm text-muted-foreground"}>© 2024 Swingin&apos; Nice.</div>
+            <div className={"text-muted-foreground text-sm"}>© 2024 Swingin&apos; Nice.</div>
         </footer>
     );
 };

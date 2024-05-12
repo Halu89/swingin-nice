@@ -8,7 +8,7 @@ import EventSummary from "~/components/molecules/EventSummary.tsx";
 
 const LandingPage = () => {
     return (
-        <main className={"bg-light flex-1"}>
+        <main className={"flex-1 bg-light"}>
             {[Hero, Events].map((Component, index) => (
                 <Section isEven={index % 2 === 0} key={index}>
                     <Component />
@@ -65,12 +65,7 @@ const Events = async () => {
             <h2 className={"text-center text-3xl font-bold"}>Évènements à venir</h2>
             <div className={"mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"}>
                 {events.map((event) => (
-                    <EventSummary
-                        key={event._id}
-                        title={event.name}
-                        date={event.date}
-                        summary={event.summary}
-                    />
+                    <EventSummary key={event._id} title={event.name} date={event.date} summary={event.summary} />
                 ))}
             </div>
         </div>

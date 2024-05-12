@@ -35,9 +35,6 @@ export const CircleDashedIcon: Icon = (props) => (
     </svg>
 );
 
-
-
-
 export const FacebookIcon: Icon = (props) => (
     <svg
         {...props}

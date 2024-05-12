@@ -13,4 +13,4 @@ export function uuidToDomId(uuid?: string) {
     const prefix = "uuid_"; // prefix to avoid starting with a number
     if (!uuid) return prefix + Math.random();
     return prefix + uuid.replace(/-/g, "_");
-};
+}
