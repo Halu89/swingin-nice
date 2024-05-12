@@ -1,11 +1,11 @@
 import React from "react";
 import { getSchools } from "~utils/api.ts";
-import { School } from "~root/sanity/schema";
+import { type School } from "~root/sanity/schema";
 import { PortableText } from "@portabletext/react";
 import { Button } from "~/components/atoms/button";
 import Link from "next/link";
 
-const School = ({ school }: { school: School }) => (
+const SchoolComponent = ({ school }: { school: School }) => (
     <div className={"rounded border border-accent p-8"}>
         <h2 className={"mb-4 text-xl font-bold text-accent"}>{school.name}</h2>
         <div className={"portable-text"}>
@@ -27,7 +27,7 @@ const Schools = async () => {
             <h1 className={"text-3xl text-accent"}>Écoles de danse</h1>
             <div className={"mt-8 grid grid-cols-1 gap-3 lg:grid-cols-2"}>
                 {schools?.map((school) => {
-                    return <School key={school._id} school={school} />;
+                    return <SchoolComponent key={school._id} school={school} />;
                 })}
             </div>
         </main>
