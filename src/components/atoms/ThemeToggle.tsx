@@ -12,6 +12,8 @@ const ThemeToggle = () => {
             duration={750}
             className={"ml-auto h-8 w-8"}
             placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
         />
     );
 };

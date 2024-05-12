@@ -26,7 +26,13 @@ export function NavbarDefault() {
     }, []);
 
     return (
-        <Navbar placeholder={undefined} fullWidth className="border-0 bg-primary px-4 py-2">
+        <Navbar
+            placeholder={undefined}
+            fullWidth
+            className="border-0 bg-primary px-4 py-2"
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+        >
             <div className="container mx-auto flex items-center justify-between text-accent">
                 <Link href="/">
                     <Image src={icon as string} alt={"Logo"} className={"h-8 w-8"} />
@@ -43,6 +49,8 @@ export function NavbarDefault() {
                     className="ml-auto h-8 w-8 hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
                     ripple={false}
                     onClick={() => setOpenNav(!openNav)}
+                    onPointerEnterCapture={undefined}
+                    onPointerLeaveCapture={undefined}
                 >
                     <MenuIcon isOpen={openNav} />
                     <span className={"sr-only"}>Menu</span>
